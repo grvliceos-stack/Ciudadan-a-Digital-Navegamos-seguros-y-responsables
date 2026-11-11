@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Objeto de aprendizaje gamificado sobre ciudadanía digital, seguridad y respeto en Internet.">
+  <title>Misión: Ciudadanía Digital</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="barra-superior">
+    <a class="marca" href="#inicio" aria-label="Ir al inicio">
+      <span class="marca-icono">🛡️</span>
+      <span>MISIÓN DIGITAL</span>
+    </a>
+    <nav class="menu" aria-label="Navegación principal">
+      <a href="#mapa">Misiones</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#progreso">Mi progreso</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="portada seccion" id="inicio">
+      <div class="portada-contenido">
+        <p class="sobrelinea">ACADEMIA DE EXPLORADORES DIGITALES</p>
+        <h1>CIUDADANÍA<br><span>DIGITAL</span></h1>
+        <p class="bajada">Navegamos seguros, pensamos antes de compartir y nos relacionamos con respeto.</p>
+        <p class="objetivo"><strong>Tu misión:</strong> aprender a tomar decisiones seguras y responsables en Internet.</p>
+        <a class="boton boton-principal" href="#mapa">Comenzar la aventura <span>➜</span></a>
+      </div>
+      <div class="portada-ilustracion" aria-hidden="true">
+        <div class="orbita orbita-uno"></div>
+        <div class="orbita orbita-dos"></div>
+        <div class="escudo">🛡️<span>✓</span></div>
+        <span class="burbuja burbuja-uno">🔒</span>
+        <span class="burbuja burbuja-dos">💬</span>
+        <span class="burbuja burbuja-tres">🌐</span>
+      </div>
+      <div class="etiqueta-nivel">NIVEL 01 <span>● ● ● ● ●</span></div>
+    </section>
+
+    <section class="panel-progreso seccion" id="progreso">
+      <div class="panel-titulo">
+        <div>
+          <p class="sobrelinea">TU AVENTURA</p>
+          <h2>Panel de progreso</h2>
+        </div>
+        <div class="puntos"><span id="puntaje">0</span><small>XP</small></div>
+      </div>
+      <div class="progreso-texto"><span id="misiones-contador">0 de 5 misiones completadas</span><strong id="porcentaje">0%</strong></div>
+      <div class="barra-progreso" role="progressbar" aria-label="Progreso de las misiones" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barra-progreso">
+        <div class="barra-progreso-relleno" id="barra-relleno"></div>
+      </div>
+      <div class="insignias" id="insignias">
+        <span class="insignia pendiente" data-insignia="1" title="Se desbloquea al completar la misión 1">🌱 <small>Explorador</small></span>
+        <span class="insignia pendiente" data-insignia="2" title="Se desbloquea al completar la misión 2">🔐 <small>Guardián</small></span>
+        <span class="insignia pendiente" data-insignia="3" title="Se desbloquea al completar la misión 3">💙 <small>Buen compañero</small></span>
+        <span class="insignia pendiente" data-insignia="4" title="Se desbloquea al completar la misión 4">🚨 <small>Alerta digital</small></span>
+        <span class="insignia pendiente" data-insignia="5" title="Se desbloquea al completar la misión 5">🏆 <small>Experto digital</small></span>
+      </div>
+    </section>
+
+    <section class="seccion mapa" id="mapa">
+      <div class="encabezado-seccion">
+        <p class="sobrelinea">ELIGE TU PRÓXIMO DESAFÍO</p>
+        <h2>Mapa de misiones</h2>
+        <p>Superá cada misión para desbloquear la siguiente. ¡Cada decisión cuenta!</p>
+      </div>
+      <div class="tarjetas-misiones">
+        <article class="tarjeta-mision disponible" data-mision-card="1">
+          <div class="numero-mision">01</div><div class="icono-mision">🌐</div>
+          <p class="estado-mision">DISPONIBLE</p><h3>¿Qué es la ciudadanía digital?</h3>
+          <p>Descubrí qué significa participar de manera responsable en Internet.</p>
+          <button class="boton boton-secundario abrir-mision" data-abrir="1">Entrar a la misión</button>
+        </article>
+        <article class="tarjeta-mision bloqueada" data-mision-card="2">
+          <div class="numero-mision">02</div><div class="icono-mision">🔐</div>
+          <p class="estado-mision">🔒 BLOQUEADA</p><h3>Cuidamos nuestros datos</h3>
+          <p>Aprendé a proteger tu información personal y tus contraseñas.</p>
+          <button class="boton boton-secundario abrir-mision" data-abrir="2" disabled>Completa la misión anterior</button>
+        </article>
+        <article class="tarjeta-mision bloqueada" data-mision-card="3">
+          <div class="numero-mision">03</div><div class="icono-mision">💬</div>
+          <p class="estado-mision">🔒 BLOQUEADA</p><h3>Respeto en Internet</h3>
+          <p>Construí vínculos positivos y pensá antes de publicar o comentar.</p>
+          <button class="boton boton-secundario abrir-mision" data-abrir="3" disabled>Completa la misión anterior</button>
+        </article>
+        <article class="tarjeta-mision bloqueada" data-mision-card="4">
+          <div class="numero-mision">04</div><div class="icono-mision">🚨</div>
+          <p class="estado-mision">🔒 BLOQUEADA</p><h3>Reconocemos los riesgos</h3>
+          <p>Identificá situaciones de grooming y ciberbullying y cómo actuar.</p>
+          <button class="boton boton-secundario abrir-mision" data-abrir="4" disabled>Completa la misión anterior</button>
+        </article>
+        <article class="tarjeta-mision bloqueada" data-mision-card="5">
+          <div class="numero-mision">05</div><div class="icono-mision">🧭</div>
+          <p class="estado-mision">🔒 BLOQUEADA</p><h3>Navegación segura</h3>
+          <p>Aplicá recomendaciones para explorar Internet con autonomía y cuidado.</p>
+          <button class="boton boton-secundario abrir-mision" data-abrir="5" disabled>Completa la misión anterior</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="zona-mision seccion oculto" id="zona-mision" aria-live="polite">
+      <div class="encabezado-mision">
+        <div><p class="sobrelinea" id="mision-etiqueta">MISIÓN 01</p><h2 id="mision-titulo">Título de misión</h2></div>
+        <button class="boton-cerrar" id="cerrar-mision" aria-label="Cerrar misión">✕</button>
+      </div>
+      <div class="contenido-mision">
+        <div class="lectura">
+          <h3>📡 Centro de información</h3>
+          <div id="mision-contenido"></div>
+          <div class="dato-clave" id="dato-clave"></div>
+        </div>
+        <div class="desafio">
+          <p class="sobrelinea">DESAFÍO DE LA MISIÓN</p>
+          <h3 id="desafio-pregunta">Resolvé el desafío</h3>
+          <div id="desafio-opciones"></div>
+          <div class="retroalimentacion" id="retroalimentacion" role="status" aria-live="polite"></div>
+          <button class="boton boton-principal" id="comprobar" disabled>Comprobar respuesta</button>
+          <button class="boton boton-secundario oculto" id="continuar">Continuar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion recursos" id="recursos">
+      <div class="encabezado-seccion">
+        <p class="sobrelinea">PARA SEGUIR APRENDIENDO</p>
+        <h2>Centro de recursos</h2>
+        <p>Consultá estos materiales antes o después de completar las misiones.</p>
+      </div>
+      <div class="recursos-grid">
+        <a class="recurso recurso-imagen" href="https://pbs.twimg.com/media/Dmqz57hV4AAWXvG.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="https://pbs.twimg.com/media/Dmqz57hV4AAWXvG.jpg" alt="Imagen educativa sobre ciudadanía digital" loading="lazy">
+          <span>Ciudadanía digital <b>↗</b></span>
+        </a>
+        <a class="recurso recurso-imagen" href="https://i.pinimg.com/originals/30/5e/40/305e408c24c99deb22cca7850bad7b32.png" target="_blank" rel="noopener noreferrer">
+          <img src="https://i.pinimg.com/originals/30/5e/40/305e408c24c99deb22cca7850bad7b32.png" alt="Infografía sobre seguridad en Internet" loading="lazy">
+          <span>Seguridad en Internet <b>↗</b></span>
+        </a>
+        <a class="recurso recurso-video" href="https://youtu.be/QAiN164WQ-o" target="_blank" rel="noopener noreferrer">
+          <div class="video-fondo">▶</div><span>Video: aprendemos a navegar seguros <b>↗</b></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="desafio-final seccion oculto" id="desafio-final">
+      <p class="sobrelinea">ÚLTIMA ETAPA</p>
+      <h2>🏆 Desafío final: guardián de la ciudadanía digital</h2>
+      <p>Completaste las cinco misiones. Respondé este último desafío para obtener tu reconocimiento.</p>
+      <div id="final-pregunta"></div>
+      <div id="final-resultado" role="status"></div>
+    </section>
+
+    <section class="seccion certificado oculto" id="certificado">
+      <div class="certificado-interior">
+        <div class="trofeo">🏆</div>
+        <p class="sobrelinea">MISIÓN COMPLETADA</p>
+        <h2>¡Sos un experto digital!</h2>
+        <p>Demostraste que podés tomar decisiones seguras y responsables en Internet.</p>
+        <p class="resultado-final">Puntaje obtenido: <strong id="puntaje-final">0 XP</strong></p>
+        <button class="boton boton-principal" id="reiniciar">Volver a jugar</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🛡️ Misión: Ciudadanía Digital</p>
+    <p>Aprender, cuidarnos y convivir también es parte de navegar.</p>
+  </footer>
+</body>
+</html>
