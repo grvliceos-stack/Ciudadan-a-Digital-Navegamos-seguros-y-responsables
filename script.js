@@ -233,7 +233,7 @@ function abrirMision(numero) {
   document.querySelector("#retroalimentacion").textContent = "";
   document.querySelector("#retroalimentacion").className = "retroalimentacion";
   botonComprobar.classList.remove("oculto");
-  botonComprobar.disabled = true;
+  botonComprobar.disabled = false; // Permite avisar si se intenta comprobar sin elegir.
   botonContinuar.classList.add("oculto");
   zonaMision.classList.remove("oculto");
   zonaMision.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -241,7 +241,13 @@ function abrirMision(numero) {
 
 function comprobarRespuesta() {
   const seleccion = document.querySelector('input[name="respuesta-mision"]:checked');
-  if (!seleccion) return;
+  if (!seleccion) {
+    const retroalimentacion = document.querySelector("#retroalimentacion");
+    retroalimentacion.textContent = "Seleccioná una respuesta antes de continuar.";
+    retroalimentacion.classList.remove("exito");
+    retroalimentacion.classList.add("error");
+    return;
+  }
 
   const respuesta = Number(seleccion.value);
   const esCorrecta = respuesta === misionActual.correcta;
@@ -261,7 +267,6 @@ function comprobarRespuesta() {
       puntaje += 100;
       misionesCompletadas.push(misionActual.id);
       misionesCompletadas.sort((a, b) => a - b);
-      
       actualizarInterfaz();
     }
   } else {
@@ -292,7 +297,7 @@ function mostrarPreguntaFinal() {
   }
 
   const pregunta = desafioFinal[respuestaFinal];
-  contenedor.innerHTML = `<h3>${respuestaFinal + 1}. ${pregunta.pregunta}</h3><div class="final-opciones"></div><button class="boton boton-principal" id="comprobar-final" disabled>Comprobar</button>`;
+  contenedor.innerHTML = `<h3>${respuestaFinal + 1}. ${pregunta.pregunta}</h3><div class="final-opciones"></div><button class="boton boton-principal" id="comprobar-final">Comprobar</button>`;
   const opciones = contenedor.querySelector(".final-opciones");
 
   pregunta.opciones.forEach(function(opcion, indice) {
@@ -313,7 +318,13 @@ function mostrarPreguntaFinal() {
 
 function comprobarFinal() {
   const seleccion = document.querySelector('input[name="respuesta-final"]:checked');
-  if (!seleccion) return;
+  if (!seleccion) {
+    const resultado = document.querySelector("#final-resultado");
+    resultado.textContent = "Seleccioná una respuesta antes de continuar.";
+    resultado.classList.remove("exito");
+    resultado.classList.add("error");
+    return;
+  }
 
   const pregunta = desafioFinal[respuestaFinal];
   const esCorrecta = Number(seleccion.value) === pregunta.correcta;
@@ -329,7 +340,6 @@ function comprobarFinal() {
     resultado.className = "retroalimentacion error";
   }
 
-  
   actualizarInterfaz();
   respuestaFinal++;
 

@@ -151,3 +151,6 @@ footer p { margin: 4px; }
   .lectura, .desafio { padding: 20px; }
   .etiqueta-nivel { right: 18px; }
 }
+
+/* Video integrado: mantiene el tamaño de las tarjetas originales. */
+.recurso-video iframe { display: block; width: 100%; height: 190px; border: 0; background: #142b49; }
